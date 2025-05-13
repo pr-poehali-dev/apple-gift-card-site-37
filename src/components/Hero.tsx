@@ -35,7 +35,7 @@ const Hero = () => {
             <div className="relative mx-auto w-full max-w-md">
               <div className="absolute inset-0 bg-gradient-to-br from-transparent to-apple-gray/50 rounded-2xl transform rotate-6"></div>
               <img
-                src="https://images.unsplash.com/photo-1607083206968-13611e3d76db?w=600&auto=format&fit=crop&q=80"
+                src="https://images.unsplash.com/photo-1592921870583-aeafb0639ffe?w=600&auto=format&fit=crop&q=80"
                 alt="Apple Gift Card"
                 className="relative z-10 w-full h-auto rounded-2xl shadow-xl"
               />
