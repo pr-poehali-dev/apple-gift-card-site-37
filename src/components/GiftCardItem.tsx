@@ -1,8 +1,6 @@
-
-import React from 'react';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
-import { motion } from 'framer-motion';
+import React from "react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 
 interface GiftCardItemProps {
   amount: number;
@@ -10,12 +8,13 @@ interface GiftCardItemProps {
   description: string;
 }
 
-const GiftCardItem: React.FC<GiftCardItemProps> = ({ amount, imageSrc, description }) => {
+const GiftCardItem: React.FC<GiftCardItemProps> = ({
+  amount,
+  imageSrc,
+  description,
+}) => {
   return (
-    <motion.div
-      whileHover={{ y: -5, transition: { duration: 0.2 } }}
-      className="h-full"
-    >
+    <div className="h-full transform transition-transform duration-200 hover:-translate-y-1">
       <Card className="h-full overflow-hidden border border-apple-lightgray hover:shadow-lg transition-shadow duration-300 rounded-2xl">
         <CardContent className="p-0 h-full flex flex-col">
           <div className="relative pt-[75%] bg-gradient-to-br from-white to-apple-gray">
@@ -27,7 +26,7 @@ const GiftCardItem: React.FC<GiftCardItemProps> = ({ amount, imageSrc, descripti
           </div>
           <div className="p-6 flex flex-col flex-grow">
             <h3 className="text-xl font-semibold mb-2">
-              {amount.toLocaleString('ru-RU')} ₽
+              {amount.toLocaleString("ru-RU")} ₽
             </h3>
             <p className="text-sm text-apple-darkgray mb-4 flex-grow">
               {description}
@@ -38,7 +37,7 @@ const GiftCardItem: React.FC<GiftCardItemProps> = ({ amount, imageSrc, descripti
           </div>
         </CardContent>
       </Card>
-    </motion.div>
+    </div>
   );
 };
 

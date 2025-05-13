@@ -1,9 +1,8 @@
-
 import type { Config } from "tailwindcss";
 
-const config = {
+const config: Config = {
   darkMode: ["class"],
-  content: ["./src/**/*.{js,ts,jsx,tsx}"],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     container: {
       center: true,
@@ -15,37 +14,26 @@ const config = {
     extend: {
       fontFamily: {
         sans: [
-          "SF Pro Text", "SF Pro", "-apple-system", "BlinkMacSystemFont", 
-          "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "sans-serif"
+          '"SF Pro Text"',
+          "-apple-system",
+          "BlinkMacSystemFont",
+          "system-ui",
+          "sans-serif",
         ],
         display: [
-          "SF Pro Display", "-apple-system", "BlinkMacSystemFont", 
-          "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "sans-serif"
+          '"SF Pro Display"',
+          "-apple-system",
+          "BlinkMacSystemFont",
+          "system-ui",
+          "sans-serif",
         ],
       },
       colors: {
-        apple: {
-          blue: "#0071E3",
-          gray: "#F5F5F7",
-          lightgray: "#E8E8ED",
-          darkgray: "#86868B",
-          black: "#1D1D1F",
-        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
-        sidebar: {
-          background: "hsl(var(--sidebar-background))",
-          foreground: "hsl(var(--sidebar-foreground))",
-          border: "hsl(var(--sidebar-border))",
-          accent: "hsl(var(--sidebar-accent))",
-          "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
-          primary: "hsl(var(--sidebar-primary))",
-          "primary-foreground": "hsl(var(--sidebar-primary-foreground))",
-          ring: "hsl(var(--sidebar-ring))",
-        },
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
@@ -74,6 +62,24 @@ const config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        sidebar: {
+          DEFAULT: "hsl(var(--sidebar-background))",
+          foreground: "hsl(var(--sidebar-foreground))",
+          primary: "hsl(var(--sidebar-primary))",
+          "primary-foreground": "hsl(var(--sidebar-primary-foreground))",
+          accent: "hsl(var(--sidebar-accent))",
+          "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
+          border: "hsl(var(--sidebar-border))",
+          ring: "hsl(var(--sidebar-ring))",
+        },
+        // Цвета, специфичные для Apple
+        apple: {
+          blue: "#0071E3",
+          gray: "#F5F5F7",
+          lightgray: "#E8E8ED",
+          darkgray: "#86868B",
+          black: "#1D1D1F",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -96,7 +102,7 @@ const config = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate"), require('@tailwindcss/typography')],
-} satisfies Config;
+  plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
+};
 
 export default config;
