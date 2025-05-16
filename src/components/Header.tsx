@@ -1,68 +1,41 @@
-
-import React, { useState } from 'react';
-import { Button } from '@/components/ui/button';
-import Icon from '@/components/ui/icon';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import React from "react";
+import { Link } from "react-router-dom";
+import Icon from "@/components/ui/icon";
+import { Button } from "@/components/ui/button";
 
 const Header = () => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
   return (
-    <header className="sticky top-0 w-full bg-white/80 backdrop-blur-md z-50 border-b border-apple-lightgray">
-      <div className="container max-w-7xl mx-auto px-4">
-        <div className="flex h-16 items-center justify-between">
-          {/* Logo */}
-          <div className="flex-shrink-0">
-            <a href="/" className="flex items-center">
-              <Icon name="Apple" className="h-6 w-6" />
-              <span className="ml-2 text-lg font-medium hidden sm:inline-block">
-                Gift Card
-              </span>
-            </a>
-          </div>
+    <header className="bg-white shadow-sm sticky top-0 z-50">
+      <div className="container mx-auto px-4 py-4 max-w-7xl">
+        <div className="flex items-center justify-between">
+          <Link to="/" className="flex items-center">
+            <Icon name="Apple" className="h-8 w-8 text-black" />
+            <span className="ml-2 font-semibold text-lg">Apple Gift Card</span>
+          </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
-            <a href="/" className="text-sm font-medium text-gray-900 hover:text-apple-blue transition-colors">
+          <nav className="hidden md:flex items-center space-x-6">
+            <Link
+              to="/"
+              className="text-gray-700 hover:text-apple-blue transition-colors"
+            >
               Главная
-            </a>
-            <a href="/cards" className="text-sm font-medium text-gray-900 hover:text-apple-blue transition-colors">
-              Карты
-            </a>
-            <a href="/guide" className="text-sm font-medium text-gray-900 hover:text-apple-blue transition-colors">
+            </Link>
+            <Link
+              to="/instructions"
+              className="text-gray-700 hover:text-apple-blue transition-colors"
+            >
               Инструкция
-            </a>
+            </Link>
           </nav>
 
-          {/* Mobile Menu Button */}
-          <div className="flex md:hidden">
-            <Sheet>
-              <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className="text-apple-black">
-                  <Icon name="Menu" className="h-6 w-6" />
-                  <span className="sr-only">Открыть меню</span>
-                </Button>
-              </SheetTrigger>
-              <SheetContent side="right" className="w-[250px] sm:w-[300px]">
-                <nav className="flex flex-col gap-4 mt-8">
-                  <a href="/" className="text-base font-medium px-2 py-3 hover:bg-apple-gray rounded-md transition-colors">
-                    Главная
-                  </a>
-                  <a href="/cards" className="text-base font-medium px-2 py-3 hover:bg-apple-gray rounded-md transition-colors">
-                    Карты
-                  </a>
-                  <a href="/guide" className="text-base font-medium px-2 py-3 hover:bg-apple-gray rounded-md transition-colors">
-                    Инструкция
-                  </a>
-                </nav>
-              </SheetContent>
-            </Sheet>
-          </div>
-
-          {/* Action Button */}
-          <div className="hidden md:block">
-            <Button className="bg-apple-blue hover:bg-blue-600 text-white">
-              Купить карту
+          <div className="flex items-center space-x-4">
+            <Button variant="outline" className="hidden sm:flex">
+              <Icon name="User" className="mr-2 h-4 w-4" />
+              Войти
+            </Button>
+            <Button className="bg-apple-blue hover:bg-blue-600">
+              <Icon name="ShoppingCart" className="mr-2 h-4 w-4" />
+              <span className="hidden sm:inline">Корзина</span>
             </Button>
           </div>
         </div>
